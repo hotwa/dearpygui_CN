@@ -57,3 +57,37 @@ dpg.destroy_context()
 2. 派发一个视图接口，使用`setup_dearpygui`函数
 3. 展示这个视图接口，使用`show_viewport`函数
 4. 最后调用`start_dearpygui`函数
+
+### 基础窗口
+
+基础窗口填充于视图窗口之中，并可调整大小置于其他窗口的后面。
+
+可以使用`set_primary_window`(true or false)在窗口中设置主(基本)窗口
+
+### IO、处理函数、状态轮询
+
+**处理函数是控件调用中对这个控件的改变做出的动作，这个动作(函数或程序)往往是封装在一个函数中。**
+
+处理函数常常有激活和非激活状态，对应着显示或隐藏某个控件。
+
+处理函数需要被注册。（换句话说就是这个函数要在调用这个对象之前定义）
+
+#### 控件的处理函数的状态
+
+- Activated
+- Active
+- Clicked
+- Deactivated
+- Deactivated After Edited
+- Focus
+- Hover
+- Resize
+- Toggled
+- Visible
+
+处理函数的特性：
+
+1. 处理函数可以绑定至某个具体的控件
+2. 处理函数可以操作多个控件，可以进行重复使用在每个控件中。
+
+#### 全局操作（IO 输入）
